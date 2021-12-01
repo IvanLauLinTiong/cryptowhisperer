@@ -1,0 +1,4 @@
+modzy-sdk
+beautifulsoup4
+streamlit
+requests

@@ -1,0 +1,14 @@
+# cache files
+__pycache__
+.ipynb_checkpoints
+
+# api key
+# PXprAzJYViAGD3veOefK.txt
+# 5nzlN7Y1umGeVfKZRZQT.txt
+# aKQibLEUPY1wy7WSCVv2.txt
+*.txt
+!requirements.txt
+api_key.py
+
+#  misc. files
+test.py
