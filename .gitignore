@@ -11,5 +11,10 @@ api_key.py
 # streamlit
 .streamlit
 
+
+# chrome
+chromedriver
+_chromedriver
+
 #  misc. files
 test.py
