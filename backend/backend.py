@@ -88,7 +88,7 @@ class Backend:
 
   
     def retrieve_top_n_news_url(self, keyword, n: int = 3) -> List[Any]:
-        with webdriver.Chrome(CHROMEDRIVER_LOCATION, options=options) as driver:
+        with webdriver.Chrome(options=options) as driver:
             # load to coindesk keyword specified search page
             search_url = f"https://www.coindesk.com/search/?s={keyword}"
             driver.get(search_url)
