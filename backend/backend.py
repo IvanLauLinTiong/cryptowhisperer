@@ -3,10 +3,6 @@ from modzy.jobs import Jobs
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from typing import Any, List, Dict
 import requests
@@ -22,6 +18,12 @@ JOB_TIMEOUT = 3600
 CHROMEDRIVER_LOCATION = './chromedriver/chromedriver.exe'
 options = Options()
 options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-features=NetworkService")
+options.add_argument("--window-size=1920x1080")
+options.add_argument("--disable-features=VizDisplayCompositor")
 
 # url validator
 url_validator = re.compile(
@@ -84,14 +86,7 @@ class Backend:
             news.append(article)
         return news
 
-    # def retrieve_top_n_news_url(self, keyword, n: int = 3) -> List[Any]:
-    #     urls = [
-    #         "https://www.coindesk.com/policy/2021/12/05/olympus-dao-might-be-the-future-of-money-or-it-might-be-a-ponzi/",
-    #         "https://www.coindesk.com/markets/2021/12/05/how-bitcoin-set-itself-up-for-this-sell-off/",
-    #         "https://www.coindesk.com/markets/2021/12/04/bitcoin-drops-9k-in-an-hour/"
-    #     ]
-    #     return urls
-        
+  
     def retrieve_top_n_news_url(self, keyword, n: int = 3) -> List[Any]:
         with webdriver.Chrome(CHROMEDRIVER_LOCATION, options=options) as driver:
             # load to coindesk keyword specified search page
@@ -122,14 +117,9 @@ class Backend:
             # Retrieve urls
             top_n_elements = driver.find_elements_by_xpath("//div[@class='searchstyles__SearchCard-ci5zlg-18 dLAdLq']/a")[1:n+1]
             urls = [elem.get_attribute("href") for elem in top_n_elements]
-            print(urls)
-            urls = None
-
             return urls
 
         
-
-
     def summarize_text(self, text: List[str]) -> List[str]:
         # Add inputs
         sources = {}

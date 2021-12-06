@@ -1,9 +1,9 @@
 from backend import Backend
-from api_key import API_KEY
 from typing import Any, List, Dict
 import streamlit as st
 import requests
 
+API_KEY = st.secrets['api_key']
 
 # create backend instance
 backend = Backend(API_KEY)
@@ -25,7 +25,7 @@ def text_to_speech(text: List[str]) -> List[bytes]:
 
 st.set_page_config(
     page_title="Crypto Whisperer",
-    page_icon="🗣",
+    page_icon="💰",
     layout="centered",
     initial_sidebar_state="auto",
 )
@@ -33,7 +33,7 @@ st.set_page_config(
 
 st.markdown(
     """
-    <h1 style='text-align: center'>Crypto Whisperer</h1>
+    <h1 style='text-align: center'>Crypto Whisperer 💰</h1>
     <p>
         Summarizes trending crypto news from <a href="https://www.coindesk.com/" target="_blank" target="_blank" rel="noopener noreferrer"> CoinDesk </a> and 
         gives you short yet highligted audio news based on your search. Thus busy people can always keep up-to-date with crypto news
