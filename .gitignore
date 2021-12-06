@@ -2,12 +2,10 @@
 __pycache__
 .ipynb_checkpoints
 
-# api key
-# PXprAzJYViAGD3veOefK.txt
-# 5nzlN7Y1umGeVfKZRZQT.txt
-# aKQibLEUPY1wy7WSCVv2.txt
+# excluding .txt files except some useful files
 *.txt
 !requirements.txt
+!packages.txt
 api_key.py
 
 #  misc. files
