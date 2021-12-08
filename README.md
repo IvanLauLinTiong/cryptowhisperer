@@ -15,7 +15,7 @@ Try it out: [share.streamlit.io](https://share.streamlit.io/ivanlaulintiong/cryp
 ## Setup Instructions
 
 1. Clone the repository to local machine
-2. Install python version 3.6+ and all required python packages in requirements.txt
+2. Install python version >=3.6 and all required python packages in requirements.txt
 3. Create a folder called `chromedriver` and download chromedriver from [here](https://chromedriver.chromium.org/downloads). Extract `chromedriver.exe` from downloaded zip to `chromedriver` folder.
 4. Create a folder called `.streamlit` and add a file called `secrets.toml`. Add your Modzy API key at this file as shown below:
 
