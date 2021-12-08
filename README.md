@@ -8,6 +8,10 @@ Youtube: [watch](https://youtu.be/8YNNACps7Yo)
 
 Try it out: [share.streamlit.io](https://share.streamlit.io/ivanlaulintiong/cryptowhisperer/main/app.py)
 
+## Workflow
+
+![](./workflow.png)
+
 ## Setup Instructions
 
 1. Clone the repository to local machine
